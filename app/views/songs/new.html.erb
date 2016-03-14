@@ -1,0 +1,12 @@
+<% form_for @album do |f| %>
+  
+  Album name: <%= f.text_field :name %>
+
+  <% @songs.each do |song| %>
+      <%= f.fields_for song do |s| %>
+         Song Title: <%= s.text_field :title %>
+         Song Artist: <%= s.text_field :artist_name %>
+      <% end %>
+  <% end %>
+
+<% end %>  

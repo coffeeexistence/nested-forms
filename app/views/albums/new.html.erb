@@ -1,0 +1,10 @@
+<%= form_for @album do |f| %>
+  
+  Album name: <%= f.text_field :name %><br>
+  <hr><br>
+  Songs in album: <input type="number" id="songCount" min="1" max="30"><br><br>
+  <div id="songInputs">
+  </div>
+
+  <%= f.submit %>
+<% end %>  

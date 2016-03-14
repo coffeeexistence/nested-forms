@@ -7,7 +7,8 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+<%= link_to "Album Index", albums_path %> - <%= link_to "Create a new Album", new_album_path %>
+<hr>
 <%= yield %>
 
 </body>

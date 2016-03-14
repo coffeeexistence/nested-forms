@@ -1,0 +1,21 @@
+<h1>Create a new Artist</h1>
+<%= form_for @artist do |f| %>
+  Artist Name: <%= f.text_field :name %><br>
+
+  <h2>Albums</h2>
+  <%= f.fields_for :albums do |album| %>
+
+    Album Name: <%= album.text_field :name %>
+
+    <h4>Album Songs</h4>
+    <%= album.fields_for :songs do |song| %>
+
+      Song Title: <%= song.text_field :title %>
+
+    <% end %>
+
+  <% end %>
+
+  <%= f.submit %>
+
+<% end %>

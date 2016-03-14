@@ -1,0 +1,4 @@
+<h1>Songs in <strong><%=@album.name%></strong></h1>
+<% @album.songs.each do |song| %>
+  <%= song.title %> - <%= song.artist.name %> <br>
+<% end %>
