@@ -2,8 +2,21 @@
   
   Album name: <%= f.text_field :name %><br>
   <hr><br>
+  <!--
   Songs in album: <input type="number" id="songCount" min="1" max="30"><br><br>
+  -->
   <div id="songInputs">
+    <%= f.fields_for :songs, @songs_attributes do |songs| %>
+      Title: <%= songs.text_field :title %> 
+      <%= songs.fields_for :artist, Artist.new do |a| %>
+        Artist: <%= a.text_field :name %>
+      <% end %> 
+      Genres: 
+      <%= songs.fields_for :genres, @genres_attributes do |g| %>
+        <%= g.text_field :name %>
+      <% end %>
+      <br>
+    <% end %>
   </div>
 
   <%= f.submit %>

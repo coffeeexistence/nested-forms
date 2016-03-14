@@ -6,6 +6,7 @@ class AlbumsController < ApplicationController
   def new
     @album=Album.new
     @songs_attributes = Array.new(7) { @album.songs.build }
+    @genres_attributes = Array.new(2) { Genre.new }
   end
 
   def create
